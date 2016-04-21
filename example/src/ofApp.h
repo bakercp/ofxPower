@@ -1,6 +1,6 @@
 // =============================================================================
 //
-// Copyright (c) 2009-2013 Christopher Baker <http://christopherbaker.net>
+// Copyright (c) 2009-2016 Christopher Baker <http://christopherbaker.net>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,26 +30,24 @@
 #include "ofxPower.h"
 
 
-using namespace ofx::Utils;
-
 class ofApp: public ofBaseApp
 {
 public:
     void draw();
 
-    std::string powerStateToString(PowerInfo::State state)
+    std::string powerStateToString(ofx::Utils::PowerInfo::State state)
     {
-        switch(state)
+        switch (state)
         {
-            case PowerInfo::STATE_ON_BATTERY:
+            case ofx::Utils::PowerInfo::STATE_ON_BATTERY:
                 return "STATE_BATTERY";
-            case PowerInfo::STATE_NO_BATTERY:
+            case ofx::Utils::PowerInfo::STATE_NO_BATTERY:
                 return "STATE_NO_BATTERY";
-            case PowerInfo::STATE_CHARGING:
+            case ofx::Utils::PowerInfo::STATE_CHARGING:
                 return "STATE_CHARGING";
-            case PowerInfo::STATE_CHARGED:
+            case ofx::Utils::PowerInfo::STATE_CHARGED:
                 return "STATE_CHARGED";
-            case PowerInfo::STATE_UNKNOWN:
+            case ofx::Utils::PowerInfo::STATE_UNKNOWN:
             default:
                 return "STATE_UNKNOWN";
         }

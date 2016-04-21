@@ -1,6 +1,6 @@
 // =============================================================================
 //
-// Copyright (c) 2009-2013 Christopher Baker <http://christopherbaker.net>
+// Copyright (c) 2009-2016 Christopher Baker <http://christopherbaker.net>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,16 +26,13 @@
 #include "ofApp.h"
 
 
-//------------------------------------------------------------------------------
 void ofApp::draw()
 {
     ofBackground(0);
 
-    PowerInfo info = GetPowerState();
+    ofx::Utils::PowerInfo info = ofx::Utils::GetPowerState();
 
     ofDrawBitmapStringHighlight("Power State: " + powerStateToString(info.state), 14,20);
     ofDrawBitmapStringHighlight("Seconds: " + ofToString(info.seconds), 14,34);
     ofDrawBitmapStringHighlight("Percent: " + ofToString(info.percent) + "%", 14,68);
-
-
 }
